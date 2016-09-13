@@ -3,12 +3,19 @@ default: &default
   encoding: utf8
   pool: 5
   timeout: 5000
+  host: localhost
 
 development:
   <<: *default
+  database: cloudtown_test
+  username: root
+  password: <%= ENV['MYSQL_PASSWORD']%>
 
 test:
   <<: *default
+  database: cloudtown_test
+  username: root
+  password: <%= ENV['MYSQL_PASSWORD']%>
 
 staging:
   adapter: mysql2
