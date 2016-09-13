@@ -1,8 +1,14 @@
 machine:
   services:
     - docker
+  python:
+    version: 2.7.3
+dependencies:
+  pre:
+    - pip install awscli
 deployment:
   staging:
     branch: master # todo can be like /^dev_*/?
     commands:
-      - ./ci/build_and_ship.sh
+      - docker login -u $DOCKER_USER -p $DOCKER_PASS
+      - ./ci/build_and_ship.sh $CIRCLE_BRANCH

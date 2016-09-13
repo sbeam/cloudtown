@@ -1,5 +1,6 @@
 #!/bin/bash
 
-docker build -t syxyz/cloudtown:$CIRCLE_BRANCH .
+TAG=$1
 
-
+docker build -t syxyz/cloudtown:$TAG .
+docker push syxyz/cloudtown:$TAG
