@@ -5,4 +5,4 @@ deployment:
   staging:
     branch: master # todo can be like /^dev_*/?
     commands:
-      - ./build_and_ship.sh
+      - ./ci/build_and_ship.sh
