@@ -2,5 +2,7 @@ machine:
   services:
     - docker
 deployment:
-  pre:
-    - docker build -t syxyz/cloudtown:$CIRCLE_BRANCH .
+  staging:
+    branch: master # todo can be like /^dev_*/?
+    commands:
+      - ./build_and_ship.sh
