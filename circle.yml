@@ -1,3 +1,6 @@
 machine:
   services:
     - docker
+deployment:
+  pre:
+    - docker build -t syxyz/cloudtown:$CIRCLE_BRANCH .
